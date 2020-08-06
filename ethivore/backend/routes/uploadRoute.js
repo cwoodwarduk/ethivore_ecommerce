@@ -32,7 +32,7 @@ router.post('/', upload.single('image'), (req, res) => {
 
 // const storageS3 = multerS3({
 //    s3,
-//    bucket: 'ethivore-bucket',
+//    bucket: '',
 //    acl: 'public-read',
 //    contentType: multerS3.AUTO_CONTENT_TYPE,
 //     key(req, file, callback){
