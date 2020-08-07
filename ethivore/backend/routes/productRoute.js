@@ -71,7 +71,7 @@ router.put("/:id", isAuth, isAdmin, async (req, res) => {
         const updatedProduct = await product.save();
 
         if(updatedProduct){
-            return res.status(200).send({messagxe: "Product updated.", data: updatedProduct});
+            return res.status(200).send({message: "Product updated.", data: updatedProduct});
         }
     }
     return res.status(500).send({message: "Error in updating product."});
@@ -83,9 +83,9 @@ router.delete("/:id", isAuth, isAdmin, async(req, res) => {
 
     if(deletedProduct){
         await deletedProduct.remove();
-        res.send({message: "Product deleted."});
-    } else{
-        res.send({message: "Error in deleting product."});
+        res.status(204).send({message: "Product deleted."});
+    } else {
+        res.status(404).send({message: "Error in deleting product."});
     }
 
 });

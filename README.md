@@ -155,8 +155,34 @@ POST /orders/
 
 ### PUT
 
-TODO
+To update a user. Takes a JSON object with a username, a user email and a user password. It then returns an object with the user's updated details, or a 404 error message if the user is not found on the DB:
+
+```
+PUT /users/{user_id}
+```
+
+To update a product. Takes a JSON object with a product category ('meat', 'vegetables' or 'cookbooks'), a product name, a product image, a product description/author, a product price, and a product count-in-stock. It then returns a 200 response and an object with the product's updated details, or a 500 error message:
+
+```
+PUT /products/{product_id}
+```
+
+To update an order to the status of 'paid'. Takes a JSON object with a user ID, an order ID, and a payment ID. It then returns a success message and an object with the order's updated details, or a 404 status with an error message:
+
+```
+PUT /orders/{order_id}/pay
+```
 
 ### DELETE
 
-TODO
+To delete a product. Returns a 204 status with a success message, or a 404 status with an error message:
+
+```
+DELETE /products/{product_id}
+```
+
+To delete an order. Returns a 204 status with a success message, or a 404 status with an error message:
+
+```
+DELETE /orders/{order_id}
+```
